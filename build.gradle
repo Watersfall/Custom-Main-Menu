@@ -11,8 +11,8 @@ apply plugin: 'net.minecraftforge.gradle.forge'
 //Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 
 
-version = "2.0.9"
-group = "lumien.custommainmenu" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+project.version = "2.0.10"
+project.group = "lumien.custommainmenu" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 
 sourceCompatibility = targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
 compileJava {
@@ -28,9 +28,6 @@ repositories {
 minecraft {
     version = "1.12.2-14.23.5.2847"
     runDir = "run"
-	
-	replaceIn "CustomMainMenu.java"
-    replace "@VERSION@",project.version
     
     // the mappings can be changed at any time, and must be in the following format.
     // snapshot_YYYYMMDD   snapshot are built nightly.
@@ -72,17 +69,4 @@ processResources {
     // this will ensure that this task is redone when the versions change.
     inputs.property "version", project.version
     inputs.property "mcversion", project.minecraft.version
-
-    // replace stuff in mcmod.info, nothing else
-    from(sourceSets.main.resources.srcDirs) {
-        include 'mcmod.info'
-                
-        // replace version and mcversion
-        expand 'version':project.version, 'mcversion':project.minecraft.version
-    }
-        
-    // copy everything else except the mcmod.info
-    from(sourceSets.main.resources.srcDirs) {
-        exclude 'mcmod.info'
-    }
 }
