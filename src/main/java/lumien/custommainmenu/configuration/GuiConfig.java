@@ -419,6 +419,24 @@ public class GuiConfig
 			b.textOffsetY = jsonObject.get("textOffsetY").getAsInt();
 		}
 
+		if(jsonObject.has("anchor"))
+		{
+			String stringAnchor = jsonObject.get("anchor").getAsString();
+
+			if (stringAnchor.equals("start"))
+			{
+				b.anchor = ANCHOR.START;
+			}
+			else if (stringAnchor.equals("middle"))
+			{
+				b.anchor = ANCHOR.MIDDLE;
+			}
+			else if (stringAnchor.equals("end"))
+			{
+				b.anchor = ANCHOR.END;
+			}
+		}
+
 		return b;
 	}
 

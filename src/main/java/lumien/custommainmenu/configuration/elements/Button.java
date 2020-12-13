@@ -2,6 +2,7 @@ package lumien.custommainmenu.configuration.elements;
 
 import lumien.custommainmenu.configuration.Alignment;
 import lumien.custommainmenu.configuration.GuiConfig;
+import lumien.custommainmenu.lib.ANCHOR;
 import lumien.custommainmenu.lib.actions.IAction;
 import lumien.custommainmenu.lib.texts.IText;
 import lumien.custommainmenu.lib.textures.ITexture;
@@ -36,6 +37,8 @@ public class Button extends Element
 	
 	public int wrappedButtonID;
 
+	public ANCHOR anchor;
+
 	public Button(GuiConfig parent,IText text, int posX, int posY, int width, int height, Alignment alignment)
 	{
 		super(parent);
@@ -62,6 +65,8 @@ public class Button extends Element
 		{
 			this.alignment = parent.getAlignment("button");
 		}
+
+		this.anchor = ANCHOR.MIDDLE;
 	}
 
 	public Button(GuiConfig parent,IText text, int posX, int posY, int width, int height)
