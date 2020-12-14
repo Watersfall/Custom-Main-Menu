@@ -412,11 +412,13 @@ public class GuiConfig
 		if (jsonObject.has("textOffsetX"))
 		{
 			b.textOffsetX = jsonObject.get("textOffsetX").getAsInt();
+			b.hoverTextOffsetX = b.textOffsetX;
 		}
 
 		if (jsonObject.has("textOffsetY"))
 		{
 			b.textOffsetY = jsonObject.get("textOffsetY").getAsInt();
+			b.hoverTextOffsetY = b.textOffsetY;
 		}
 
 		if(jsonObject.has("hoverTextOffsetX"))
