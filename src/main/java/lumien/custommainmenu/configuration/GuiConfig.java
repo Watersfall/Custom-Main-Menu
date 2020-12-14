@@ -419,6 +419,16 @@ public class GuiConfig
 			b.textOffsetY = jsonObject.get("textOffsetY").getAsInt();
 		}
 
+		if(jsonObject.has("hoverTextOffsetX"))
+		{
+			b.hoverTextOffsetX = jsonObject.get("hoverTextOffsetX").getAsInt();
+		}
+
+		if(jsonObject.has("hoverTextOffsetY"))
+		{
+			b.hoverTextOffsetY = jsonObject.get("hoverTextOffsetY").getAsInt();
+		}
+
 		if(jsonObject.has("anchor"))
 		{
 			String stringAnchor = jsonObject.get("anchor").getAsString();

@@ -112,17 +112,19 @@ public class GuiCustomButton extends GuiButton
 			String text = hovered ?
 					I18n.format(StringReplacer.replacePlaceholders(b.hoverText.get()), new Object[0]) :
 					I18n.format(StringReplacer.replacePlaceholders(b.text.get()));
+			int offsetX = hovered ? b.hoverTextOffsetX : b.textOffsetX;
+			int offsetY = hovered ? b.hoverTextOffsetY : b.textOffsetY;
 			if(b.anchor == ANCHOR.MIDDLE)
 			{
-				this.drawCenteredString(fontrenderer, text, this.x + this.width / 2 + b.textOffsetX, this.y + (this.height - 8) / 2 + b.textOffsetY, l, b.shadow);
+				this.drawCenteredString(fontrenderer, text, this.x + this.width / 2 + offsetX, this.y + (this.height - 8) / 2 + offsetY, l, b.shadow);
 			}
 			else if(b.anchor == ANCHOR.START)
 			{
-				this.drawString(fontrenderer, text, this.x + b.textOffsetX, this.y + (this.height - 8) / 2 + b.textOffsetY, l);
+				this.drawString(fontrenderer, text, this.x + offsetX, this.y + (this.height - 8) / 2 + offsetY, l);
 			}
 			else
 			{
-				this.drawString(fontrenderer, text, this.x + this.width - fontrenderer.getStringWidth(text) + b.textOffsetX, this.y + (this.height - 8) / 2 + b.textOffsetY, l);
+				this.drawString(fontrenderer, text, this.x + this.width - fontrenderer.getStringWidth(text) + offsetX, this.y + (this.height - 8) / 2 + offsetY, l);
 			}
 		}
 	}

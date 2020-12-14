@@ -34,6 +34,8 @@ public class Button extends Element
 	
 	public int textOffsetX;
 	public int textOffsetY;
+	public int hoverTextOffsetX;
+	public int hoverTextOffsetY;
 	
 	public int wrappedButtonID;
 
